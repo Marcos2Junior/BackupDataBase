@@ -40,11 +40,11 @@ namespace BackupDataBase.Shared.Models
                     {
                         name = name.Replace(c, '_');
                     }
-                    if(name.Length == 0)
+                    if (name.Length == 0)
                     {
                         throw new System.Exception($"name {Name} is invalid");
                     }
-                   
+
                     return Path.Combine(_directory, name.ToLower());
                 }
 
