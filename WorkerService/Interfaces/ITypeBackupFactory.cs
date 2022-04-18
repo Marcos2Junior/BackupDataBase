@@ -1,6 +1,6 @@
 ﻿using BackupDataBase.Shared.Models;
 
-namespace WorkerService.Interfaces
+namespace BackupDataBase.Worker.Interfaces
 {
     public interface ITypeBackupFactory
     {

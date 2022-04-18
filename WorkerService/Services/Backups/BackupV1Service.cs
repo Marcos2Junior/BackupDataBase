@@ -1,5 +1,5 @@
 ﻿using System;
-using WorkerService.Interfaces;
+using BackupDataBase.Worker.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.IO;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using BackupDataBase.Shared.Models;
 using System.Linq;
 
-namespace WorkerService.Services.Backups
+namespace BackupDataBase.Worker.Services.Backups
 {
     public class BackupV1Service : IBackupService
     {

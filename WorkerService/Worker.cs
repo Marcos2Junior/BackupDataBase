@@ -2,12 +2,12 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using WorkerService.Interfaces;
+using BackupDataBase.Worker.Interfaces;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 
-namespace WorkerService
+namespace BackupDataBase.Worker
 {
     public class Worker : BackgroundService
     {

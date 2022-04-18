@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace WorkerService.Interfaces
+namespace BackupDataBase.Worker.Interfaces
 {
     public interface IBackupService
     {

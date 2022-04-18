@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using MySql.Data.MySqlClient;
-using WorkerService.Interfaces;
+using BackupDataBase.Worker.Interfaces;
 using Microsoft.Extensions.Logging;
 using BackupDataBase.Shared.Models;
 
-namespace WorkerService.Services.Types
+namespace BackupDataBase.Worker.Services.Types
 {
     public class MySqlService : ITypeBackupService
     {

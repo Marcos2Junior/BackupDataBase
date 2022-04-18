@@ -1,9 +1,9 @@
 ﻿using BackupDataBase.Shared.Models;
 using System;
-using WorkerService.Interfaces;
-using WorkerService.Services.Types;
+using BackupDataBase.Worker.Interfaces;
+using BackupDataBase.Worker.Services.Types;
 
-namespace WorkerService.Factorys
+namespace BackupDataBase.Worker.Factorys
 {
     public class TypeBackupFactory : ITypeBackupFactory
     {
