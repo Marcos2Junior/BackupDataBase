@@ -1,53 +1,50 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
-using WorkerService.Models;
+using WorkerService.Interfaces;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
 namespace WorkerService
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
-        private readonly List<Backup> backupModels;
-        private readonly string directory;
+        private readonly IBackupService _backupService;
+        private readonly string pathFileConfig;
 
-        public Worker(ILogger<Worker> logger, IConfiguration configuration)
+        public Worker(ILogger<Worker> logger, IConfiguration configuration, IBackupService backupService)
         {
             _logger = logger;
-            backupModels = configuration.GetSection("BackupModel").Get<List<Backup>>();
-            directory = configuration["DirectoryBackup"];
-            ValidParameters();
+            _backupService = backupService;
+            pathFileConfig = configuration["PathFileConfig"];
+            if (!File.Exists(pathFileConfig))
+            {
+                throw new FileNotFoundException($"PathFileConfig {pathFileConfig} not found");
+            }
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-
-            var dsf = HttpUtility.UrlEncode("OTlMWFVxWExMV0JucUlncjA1d2NheW5IRklzS21ZdjRGaDRmbWtqR2VJSDhBUDZLR1JONTByVmtKQm5wRVhnUA==");
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(1000, stoppingToken);
-                CheckBackup();
-            }
-        }
 
-        private void ValidParameters()
-        {
-            if (backupModels == null || backupModels.Count == 0)
-            {
-                throw new Exception("Backup models null or empty");
-            }
-
-            if (string.IsNullOrEmpty(directory) || !Directory.Exists(directory))
-            {
-                throw new Exception($"directory to backup {directory} is not found");
+                try
+                {
+                    _logger.LogInformation($"backup service type {_backupService.GetType()} executing at: {DateTimeOffset.Now}");
+                    await _backupService.ExecuteAsync(pathFileConfig);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex.Message, ex);
+                }
+                finally
+                {
+                    _logger.LogInformation($"backup service finish at: {DateTimeOffset.Now}");
+                }
             }
         }
 

@@ -1,7 +1,7 @@
-﻿using System.IO;
-using WorkerService.Models;
+﻿using BackupDataBase.Shared.Models;
+using System.IO;
 
-namespace WorkerService
+namespace WorkerService.Interfaces
 {
     public interface ITypeBackupService
     {

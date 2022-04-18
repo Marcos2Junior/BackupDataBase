@@ -9,4 +9,7 @@
     <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.1.21" />
     <PackageReference Include="MySqlBackup.NET" Version="2.3.6.1" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackupDataBase.Shared\BackupDataBase.Shared.csproj" />
+  </ItemGroup>
 </Project>
