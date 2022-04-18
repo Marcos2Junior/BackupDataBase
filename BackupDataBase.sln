@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackupDataBase.Worker", "BackupDataBase.Worker\BackupDataBase.Worker.csproj", "{39991925-4E45-448E-909F-19CD62711DEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupDataBase.Shared", "BackupDataBase.Shared\BackupDataBase.Shared.csproj", "{8599D54A-875D-47B0-91C8-40A7A0267090}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackupDataBase.Shared", "BackupDataBase.Shared\BackupDataBase.Shared.csproj", "{8599D54A-875D-47B0-91C8-40A7A0267090}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupDataBase.APP", "BackupDataBase.APP\BackupDataBase.APP.csproj", "{33B33DE0-E40A-4000-8E34-3712C263FFA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8599D54A-875D-47B0-91C8-40A7A0267090}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8599D54A-875D-47B0-91C8-40A7A0267090}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8599D54A-875D-47B0-91C8-40A7A0267090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B33DE0-E40A-4000-8E34-3712C263FFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B33DE0-E40A-4000-8E34-3712C263FFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B33DE0-E40A-4000-8E34-3712C263FFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B33DE0-E40A-4000-8E34-3712C263FFA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
