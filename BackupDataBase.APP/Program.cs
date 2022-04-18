@@ -4,6 +4,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Configuration;
 using Microsoft.Extensions.Configuration;
+using System.Runtime.InteropServices;
+using BackupDataBase.APP.Services;
 
 namespace BackupDataBase.APP
 {
@@ -32,6 +34,7 @@ namespace BackupDataBase.APP
                 try
                 {
                     logger.Info("application starting");
+
                     Application.Run(serviceScope.ServiceProvider.GetRequiredService<FrmMain>());
                 }
                 catch (Exception ex)

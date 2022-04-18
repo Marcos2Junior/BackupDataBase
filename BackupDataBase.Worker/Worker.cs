@@ -47,34 +47,5 @@ namespace BackupDataBase.Worker
                 }
             }
         }
-
-        private void CheckBackup()
-        {
-            //ValidParameters();
-            //foreach (Backup backupModel in backupModels)
-            //{
-            //    if (DateTime.Now.TimeOfDay >= backupModel.StartDay && DateTime.Now.TimeOfDay <= backupModel.FinishDay)
-            //    {
-            //        string dir = Path.Combine(Path.Combine(directory, "backup_database"), backupModel.Name.ToLower());
-            //        Directory.CreateDirectory(dir);
-            //        var allFiles = Directory.GetFiles(dir);
-            //        DateTime lastCreation = DateTime.MinValue;
-            //        foreach (var file in allFiles)
-            //        {
-            //            var creationTime = new FileInfo(file).CreationTime;
-            //            if (creationTime > lastCreation)
-            //            {
-            //                lastCreation = creationTime;
-            //            }
-            //        }
-
-            //        if (lastCreation.AddMinutes(backupModel.IntervalInMinutes) <= DateTime.Now)
-            //        {
-            //            _logger.LogInformation($"Backup {backupModel.Name} iniciado: {DateTimeOffset.Now}");
-            //            BackupMysql(backupModel, dir);
-            //        }
-            //    }
-            //}
-        }
     }
 }
